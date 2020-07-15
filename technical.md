@@ -1,43 +1,74 @@
 # Technical interview questions
 
-The list is based on this post: https://hackernoon.com/technical-data-science-interview-questions-sql-and-coding-jv1k32bf
+The 
 
 Categories:
 
-* SQL
-* Coding
-* Algorithmic
+* Data structure
+* sort
+* NP-Probleme
 
 
-## SQL
+## Data structure
 
-Suppose we have the following schema with two tables: Ads and Events
-
-* Ads(ad_id, campaign_id, status)
-* status cound be active or inactive
-* Events(event_id, ad_id, source, event_type, date, hour)
-* event_type could be impression, click, conversion
+* ABR
 
 <img src="img/schema.png" />
 
 
-Write SQL queries to extract the following information:
+Write the python code of each preocupation :
 
-**1)** The number of active ads.
+**1)** Structure permettant de definir un ABR
 
-```sql
-SELECT count(*) FROM Ads WHERE status = 'active'; 
+```python
+class arbre:
+    """docstring for arbre"""
+    def __init__(self, arg):
+        self.left = None
+        self.right = None
+        self.parent = None
+        self.arg = arg
+
+    # The next fonction will going to write
+
+    def insertion(self):
+        pass
+
+    def infixPrint(self):
+        pass
+
+    def prefixPrint(self):
+        pass
+         .
+         .
+         .
+         .
+         .
+         .
+         .
+    # And more again     
 ```
 
 <br/>
 
 
-**2)** All active campaigns. A campaign is active if there’s at least one active ad.
+**2)** Fonction for insertion to the BTS
 
-```sql
-SELECT DISTINCT a.campaign_id
-FROM Ads AS a
-WHERE a.status = 'active'; 
+```python
+def insert(self, val):
+        if self.arg:
+            if self.arg > val:
+                if self.left is None:
+                    self.left = arbre(val)
+                else:
+                    self.left.insert(val)
+            elif self.arg < val:
+                if self.right is None:
+                    self.right = arbre(val)
+                else:
+                    self.right.insert(val)
+        else:
+            self.arg = val
 ```
 
 <br/>
